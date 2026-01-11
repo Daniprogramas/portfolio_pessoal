@@ -28,3 +28,12 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+// Dark mode toggle
+const darkToggle = document.getElementById("darkToggle");
+
+if (darkToggle) {
+  darkToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light");
+    darkToggle.textContent = document.body.classList.contains("light") ? "🌞 Light" : "🌙 Dark";
+  });
+}
