@@ -49,3 +49,50 @@ body {
 .contact button { background:var(--secondary); color:#000; border:none; padding:.7rem 1.2rem; border-radius:6px; }
 
 .site-footer { text-align:center; padding:1rem; background:var(--primary); color:var(--text); }
+/* Responsividade */
+
+/* Tablets e telas médias */
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .hero img {
+    max-width: 80%;
+    margin-top: 1rem;
+  }
+}
+
+/* Smartphones */
+@media (max-width: 600px) {
+  .nav-list {
+    display: none;
+    flex-direction: column;
+    background: var(--primary);
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 1rem;
+    border-radius: 8px;
+  }
+  .nav-list.open {
+    display: flex;
+  }
+  .nav-toggle {
+    display: inline-block;
+    background: var(--secondary);
+    color: #000;
+    border: none;
+    padding: .5rem .8rem;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .grid.cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact input, .contact textarea {
+    font-size: 14px;
+  }
+}
