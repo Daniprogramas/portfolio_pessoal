@@ -91,6 +91,33 @@ body {
   .grid.cards {
     grid-template-columns: 1fr;
   }
+/* Botão toggle */
+.btn-toggle {
+  background: var(--secondary);
+  color: #000;
+  border: none;
+  padding: .5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* Tema claro */
+body.light {
+  background: #ffffff;
+  color: #000000;
+}
+
+body.light .site-header,
+body.light .site-footer {
+  background: #f0f0f0;
+  color: #000;
+}
+
+body.light .card {
+  background: #f9f9f9;
+  color: #000;
+}
 
   .contact input, .contact textarea {
     font-size: 14px;
