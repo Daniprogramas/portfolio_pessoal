@@ -235,3 +235,25 @@ body.light .hero {
   }
   .grid.cards { grid-template-columns:1fr; }
 }
+/* Parágrafos */
+.section p {
+  max-width: 900px;       /* limita largura para não ficar esticado */
+  margin: 0 auto 1.5rem;  /* centraliza horizontalmente */
+  text-align: justify;    /* texto justificado */
+  line-height: 1.8;       /* mais espaçamento entre linhas */
+  font-size: 1.1rem;
+}
+
+/* Hero */
+.hero {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:4rem 6rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color:#fff;
+  border-radius: 0 0 40px 40px;   /* bordas arredondadas na parte inferior */
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3); /* sombra suave */
+}
+
+
