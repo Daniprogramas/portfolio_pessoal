@@ -28,40 +28,86 @@ body {
   z-index:1000;
 }
 
+.nav {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
 .logo { font-weight:bold; font-size:1.3rem; color:var(--text); text-decoration:none; }
 
 .nav-list { list-style:none; display:flex; gap:2rem; margin:0; }
 .nav-list a { color:var(--text); text-decoration:none; font-weight:500; }
 .nav-list a:hover { color:#FFD700; }
 
+/* Botão toggle dentro do header */
+.btn-toggle {
+  background: transparent;
+  color:#fff;
+  border:2px solid #fff;
+  padding:.4rem .8rem;
+  border-radius:20px;
+  cursor:pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+.btn-toggle:hover {
+  background:#fff;
+  color:var(--primary);
+}
+
 /* Hero */
 .hero {
   display:flex; align-items:center; justify-content:space-between;
-  padding:5rem 8rem;
+  padding:4rem 6rem;
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color:#fff;
 }
 
 .hero-content { max-width:50%; }
-.hero-content h1 { font-size:2.5rem; margin-bottom:1rem; }
-.hero-content p { font-size:1.2rem; margin-bottom:2rem; }
+.hero-content h1 { font-size:2.2rem; margin-bottom:1rem; }
+.hero-content p { font-size:1.1rem; margin-bottom:2rem; }
 
 .hero img {
-  max-width:320px;
+  max-width:220px;   /* reduzido */
   border-radius:50%;
-  box-shadow:0 8px 20px rgba(0,0,0,0.4);
+  box-shadow:0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* Botão principal */
+.btn-primary {
+  background: var(--secondary);
+  color:#fff;              /* texto branco para contraste */
+  border:none;
+  padding:.8rem 1.5rem;
+  border-radius:8px;
+  font-weight:bold;
+  cursor:pointer;
+  transition: background 0.3s ease;
+}
+.btn-primary:hover {
+  background:#005fa3;      /* azul mais escuro no hover */
+  color:#fff;
 }
 
 /* Seções */
-.section { padding:5rem 8rem; }
-.section h2 { text-align:center; font-size:2rem; margin-bottom:2rem; color:var(--secondary); }
+.section {
+  padding:5rem 8rem;
+  max-width:1200px;       /* largura máxima */
+  margin:0 auto;          /* centraliza */
+}
+.section h2 {
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:2rem;
+  color:var(--secondary);
+}
 .section.alt { background:var(--primary); }
 
 /* Skills */
 .skills { display:flex; flex-wrap:wrap; gap:.8rem; justify-content:center; }
 .skills li {
   background:var(--secondary);
-  color:#000;
+  color:#fff; /* texto branco */
   padding:.5rem 1rem;
   border-radius:20px;
   font-weight:500;
@@ -102,8 +148,9 @@ body {
 
 /* Contato */
 .contact {
-  max-width:600px;
-  margin:0 auto;
+  max-width:600px;        /* limita largura */
+  margin:0 auto;          /* centraliza */
+  text-align:left;
 }
 .contact input, .contact textarea {
   width:100%;
@@ -117,6 +164,8 @@ body {
 }
 .contact textarea { min-height:120px; }
 .contact button {
+  display:block;
+  margin:1rem auto 0;     /* centraliza botão */
   background:var(--secondary);
   color:#fff;
   border:none;
@@ -137,22 +186,6 @@ body {
   font-size:.9rem;
 }
 
-/* Botão toggle */
-.btn-toggle {
-  background: var(--secondary);
-  color: #000;
-  border: none;
-  padding: .5rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-left: 1rem;
-  transition: background 0.3s ease;
-}
-.btn-toggle:hover {
-  background: #FFD700;
-  color: #000;
-}
-
 /* ===========================
    Tema Claro (body.light)
    =========================== */
@@ -170,7 +203,7 @@ body.light {
 @media (max-width: 1000px) {
   .hero { flex-direction: column; text-align:center; padding:3rem; }
   .hero-content { max-width:100%; margin-bottom:2rem; }
-  .hero img { max-width:200px; }
+  .hero img { max-width:180px; }
   .section { padding:3rem; }
 }
 
@@ -189,7 +222,7 @@ body.light {
   .nav-toggle {
     display:inline-block;
     background: var(--secondary);
-    color:#000;
+    color:#fff;
     border:none;
     padding:.5rem .8rem;
     border-radius:6px;
