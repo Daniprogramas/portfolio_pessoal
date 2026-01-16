@@ -23,7 +23,7 @@ body {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
   color:var(--text);
   padding:1rem 2rem;
-  position:sticky;
+  position: relative;   /* não é mais fixo */
   top:0;
   z-index:1000;
 }
@@ -190,11 +190,16 @@ body {
    Tema Claro (body.light)
    =========================== */
 body.light {
-  --primary:#f9f9f9;
-  --secondary:#0077cc;
-  --bg:#ffffff;
+  --primary:#e0e0e0;   /* cinza médio */
+  --secondary:#005fa3; /* azul mais escuro */
+  --bg:#f9f9f9;        /* fundo claro */
   --text:#000000;
   --muted:#666666;
+}
+
+body.light .hero {
+  background: linear-gradient(135deg, #005fa3, #1E3A8A); /* gradiente escuro no topo */
+  color:#fff;
 }
 
 /* ===========================
