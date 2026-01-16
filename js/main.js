@@ -4,6 +4,17 @@
 document.addEventListener("DOMContentLoaded", () => {
   const ano = document.getElementById("ano");
   if (ano) ano.textContent = new Date().getFullYear();
+
+  // Carregar preferência de tema salva
+  const savedTheme = localStorage.getItem("theme");
+  const darkToggle = document.getElementById("darkToggle");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light");
+    if (darkToggle) darkToggle.textContent = "🌙 Dark";
+  } else {
+    if (darkToggle) darkToggle.textContent = "☀️ Light";
+  }
 });
 
 // Menu mobile toggle
@@ -28,12 +39,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
+
 // Dark mode toggle
 const darkToggle = document.getElementById("darkToggle");
 
 if (darkToggle) {
   darkToggle.addEventListener("click", () => {
     document.body.classList.toggle("light");
-    darkToggle.textContent = document.body.classList.contains("light") ? "🌞 Light" : "🌙 Dark";
+
+    if (document.body.classList.contains("light")) {
+      darkToggle.textContent = "🌙 Dark";
+      localStorage.setItem("theme", "light");
+    } else {
+      darkToggle.textContent = "☀️ Light";
+      localStorage.setItem("theme", "dark");
+    }
   });
 }
