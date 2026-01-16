@@ -7,8 +7,6 @@
   <meta name="description" content="Portfólio de Danielle Morais de Lima, especialista em soluções web: landing pages, sistemas e orçamentos.">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="favicon/favicon.ico">
-  <button id="darkToggle" class="btn-toggle">🌙 Dark</button>
-
 </head>
 <body>
   <header class="site-header">
@@ -20,6 +18,8 @@
         <li><a href="#experiencias">Experiências</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
+      <!-- Botão de alternância -->
+      <button id="darkToggle" class="btn-toggle">☀️ Light</button>
     </nav>
     <section id="home" class="hero">
       <div class="hero-content">
@@ -90,7 +90,9 @@
   </main>
 
   <footer class="site-footer">
-    <p>© 2026 DaniSoftWeb — Todos os direitos reservados.</p>
+    <p>© <span id="ano"></span> DaniSoftWeb — Todos os direitos reservados.</p>
   </footer>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
